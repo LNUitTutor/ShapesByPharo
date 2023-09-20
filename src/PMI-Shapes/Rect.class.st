@@ -3,7 +3,7 @@ Model of geometric rectangle
 "
 Class {
 	#name : #Rect,
-	#superclass : #Object,
+	#superclass : #FlatShape,
 	#instVars : [
 		'a',
 		'b'
