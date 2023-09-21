@@ -1,3 +1,6 @@
+"
+Трикутник задано двома сторонами і кутом між ними (у градусах)
+"
 Class {
 	#name : #Triangle,
 	#superclass : #FlatShape,
@@ -6,5 +9,5 @@ Class {
 		'b',
 		'gamma'
 	],
-	#category : #'PMI-Shapes'
+	#category : #'PMI-Shapes-Flat'
 }

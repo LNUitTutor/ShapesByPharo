@@ -4,7 +4,7 @@
 Class {
 	#name : #Square,
 	#superclass : #Rect,
-	#category : #'PMI-Shapes'
+	#category : #'PMI-Shapes-Flat'
 }
 
 { #category : #'instance creation' }

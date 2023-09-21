@@ -1,7 +1,7 @@
 Class {
 	#name : #RectTest,
 	#superclass : #TestCase,
-	#category : #'PMI-Shapes'
+	#category : #'PMI-Shapes-Tests'
 }
 
 { #category : #tests }

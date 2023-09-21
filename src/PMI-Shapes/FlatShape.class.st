@@ -1,10 +1,13 @@
 "
-Абстрактний клас плоских фігур
+Абстрактний клас плоских фігур.
+Усі фігури вміють повідомляти:
+- area  ""площу""
+- perim ""периметр""
 "
 Class {
 	#name : #FlatShape,
 	#superclass : #Object,
-	#category : #'PMI-Shapes'
+	#category : #'PMI-Shapes-Flat'
 }
 
 { #category : #accessing }

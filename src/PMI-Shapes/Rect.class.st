@@ -1,5 +1,5 @@
 "
-Model of geometric rectangle
+Model of geometric rectangle. Holds width and height.
 "
 Class {
 	#name : #Rect,
@@ -8,7 +8,7 @@ Class {
 		'a',
 		'b'
 	],
-	#category : #'PMI-Shapes'
+	#category : #'PMI-Shapes-Flat'
 }
 
 { #category : #'instance creation' }
