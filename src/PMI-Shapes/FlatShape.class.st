@@ -10,12 +10,12 @@ Class {
 	#category : #'PMI-Shapes-Flat'
 }
 
-{ #category : #accessing }
+{ #category : #calculating }
 FlatShape >> area [
 ^ self subclassResponsibility 
 ]
 
-{ #category : #accessing }
+{ #category : #calculating }
 FlatShape >> perim [
 ^ self subclassResponsibility 
 ]
