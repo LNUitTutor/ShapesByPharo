@@ -5,6 +5,6 @@
 ```Smalltalk
 Metacello new
    baseline: 'ShapesByPharo';
-   repository: github://LNUitTutor/ShapesByPharo/src';
+   repository: 'github://LNUitTutor/ShapesByPharo/src';
    load
 ```
