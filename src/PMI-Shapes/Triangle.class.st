@@ -77,6 +77,12 @@ Triangle >> gammaInRad [
 	^ gamma / 180 * Float pi
 ]
 
+{ #category : #calculating }
+Triangle >> inRadius [
+
+	^ 2 * self area / self perim
+]
+
 { #category : #initialization }
 Triangle >> initialize [
 
