@@ -14,3 +14,8 @@ BaselineOfShapesByPharo >> baseline: spec [
 			package: 'PMI-Shapes-Tests' with: [ spec requires: #( 'PMI-Shapes' ) ]
 		].
 ]
+
+{ #category : #accessing }
+BaselineOfShapesByPharo >> projectClass [
+	^ MetacelloCypressBaselineProject
+]
