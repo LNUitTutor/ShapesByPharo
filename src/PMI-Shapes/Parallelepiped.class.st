@@ -9,6 +9,22 @@ Parallelepiped class >> newA: aNumber andB: bNumber andC: cNumber [
  	^ self basicNew initWithA: aNumber andB: bNumber andC: cNumber. 
 ]
 
+{ #category : #'instance creation' }
+Parallelepiped class >> newByRequest [
+
+	| string stream |
+	string := UIManager default
+		          request: 'Provide a, b and c separated by spaces'
+		          initialAnswer: '1 2 3'
+		          title: 'Create a Parallelepiped'.
+	string ifNil: [ ^ nil ].
+	stream := string readStream.
+	^ self
+		  newA: (stream upTo: Character space) asNumber
+		  andB: (stream upTo: Character space) asNumber
+		  andC: stream upToEnd asNumber
+]
+
 { #category : #accessing }
 Parallelepiped >> base: anObject [
 

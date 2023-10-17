@@ -12,6 +12,23 @@ TriPiramid class >> newA: aLength andB: bLength withG: anAngle andH: aHeight [
 		  height: aHeight
 ]
 
+{ #category : #'instance creation' }
+TriPiramid class >> newByRequest [
+
+	| string stream |
+	string := UIManager default
+		          request: 'Provide a, b, gamma and h separated by spaces'
+		          initialAnswer: '2 2 60 1'
+		          title: 'Create a Triangular Piramid'.
+	string ifNil: [ ^ nil ].
+	stream := string readStream.
+	^ self
+		  newA: (stream upTo: Character space) asNumber
+		  andB: (stream upTo: Character space) asNumber
+		  withG: (stream upTo: Character space) asNumber
+		  andH: stream upToEnd asNumber
+]
+
 { #category : #initialization }
 TriPiramid >> initialize [
 

@@ -5,6 +5,21 @@ Class {
 }
 
 { #category : #'instance creation' }
+Cone class >> newByRequest [
+
+	| string stream |
+	string := UIManager default
+		          request: 'Provide r and h separated by space'
+		          initialAnswer: '1 1'
+		          title: 'Create a Cone'.
+	string ifNil: [ ^ nil ].
+	stream := string readStream.
+	^ self
+		  newR: (stream upTo: Character space) asNumber
+		  andH: stream upToEnd asNumber
+]
+
+{ #category : #'instance creation' }
 Cone class >> newR: aRadius andH: aHeight [
 
 	^ self basicNew

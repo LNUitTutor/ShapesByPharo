@@ -12,6 +12,22 @@ RectPiramid class >> newA: aNumber andB: bNumber andH: aHeight [
 		  height: aHeight
 ]
 
+{ #category : #'instance creation' }
+RectPiramid class >> newByRequest [
+
+	| string stream |
+	string := UIManager default
+		          request: 'Provide a, b and h separated by spaces'
+		          initialAnswer: '1 2 3'
+		          title: 'Create a Rectangular Piramid'.
+	string ifNil: [ ^ nil ].
+	stream := string readStream.
+	^ self
+		  newA: (stream upTo: Character space) asNumber
+		  andB: (stream upTo: Character space) asNumber
+		  andH: stream upToEnd asNumber
+]
+
 { #category : #initialization }
 RectPiramid >> initialize [
 

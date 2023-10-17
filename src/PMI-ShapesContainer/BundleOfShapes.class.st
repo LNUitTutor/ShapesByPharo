@@ -50,6 +50,14 @@ BundleOfShapes >> addFirst: aShape [
 	^ memory addFirst: aShape
 ]
 
+{ #category : #adding }
+BundleOfShapes >> addFromDialog [
+
+	| shape |
+	(shape := VolumeShape getInstanceByRequest) ifNotNil: [
+		memory add: shape ]
+]
+
 { #category : #accessing }
 BundleOfShapes >> at: anIndex [
 

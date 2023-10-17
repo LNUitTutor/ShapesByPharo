@@ -16,6 +16,19 @@ Class {
 	#category : #'PMI-Shapes-Volume'
 }
 
+{ #category : #services }
+VolumeShape class >> getInstanceByRequest [
+
+	| classes answer |
+	classes := self allSubclasses select: [ :c |
+		           c respondsTo: #newByRequest ].
+	answer := UIManager default
+		          chooseFrom: (classes collect: [ :c | c name ])
+		          values: (classes collect: [ :c | [ c newByRequest ] ])
+		          title: 'Choose your shape'.
+	^ answer ifNotNil: [ answer value ]
+]
+
 { #category : #comparing }
 VolumeShape >> > aVolumeShape [ 
 	^ self volume > aVolumeShape volume 
