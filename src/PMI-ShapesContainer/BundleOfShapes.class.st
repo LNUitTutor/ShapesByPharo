@@ -7,14 +7,27 @@ Class {
 	#category : #'PMI-ShapesContainer'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #loading }
 BundleOfShapes class >> loadFromCodeFile: pathString [
 pathString asFileReference readStreamDo: [ :in | ^ Smalltalk compiler evaluate: in contents ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #loading }
 BundleOfShapes class >> loadFromStonFile: pathString [
 pathString asFileReference readStreamDo: [ :in | ^ (STON reader on: in) next ]
+]
+
+{ #category : #services }
+BundleOfShapes class >> pickFileAndLoad: pattern [
+
+	| pathString |
+	pathString := UIManager default
+		              chooseFullFileNameMatching: { pattern }
+		              label: 'Choose file to open'.
+	pathString ifNil: [ ^ nil ].
+	'*.ston' = pattern ifTrue: [ ^ self loadFromStonFile: pathString ].
+	'*.stc' = pattern ifTrue: [ ^ self loadFromCodeFile: pathString ].
+	^ self error: 'Unknown type of file: ' , pattern
 ]
 
 { #category : #adding }
