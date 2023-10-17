@@ -16,6 +16,11 @@ Class {
 	#category : #'PMI-Shapes-Volume'
 }
 
+{ #category : #comparing }
+VolumeShape >> > aVolumeShape [ 
+	^ self volume > aVolumeShape volume 
+]
+
 { #category : #accessing }
 VolumeShape >> base: aFlatShape [ 
 	base := aFlatShape 
@@ -41,6 +46,12 @@ self subclassResponsibility
 VolumeShape >> lateralArea [
 
 	^ self subclassResponsibility
+]
+
+{ #category : #accessing }
+VolumeShape >> max: aVolumeShape [ 
+	^ self > aVolumeShape 
+	ifTrue: [ self ] ifFalse: [ aVolumeShape ]
 ]
 
 { #category : #printing }

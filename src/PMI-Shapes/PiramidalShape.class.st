@@ -7,9 +7,10 @@ Class {
 { #category : #printing }
 PiramidalShape >> printOn: aStream [
 
-	aStream nextPutAll: self class name , ' / '.
+	aStream nextPutAll: self class name.
+	aStream nextPut: $/.
 	super printOn: aStream.
-	aStream nextPutAll: ' \'
+	aStream nextPut: $\
 ]
 
 { #category : #calculating }

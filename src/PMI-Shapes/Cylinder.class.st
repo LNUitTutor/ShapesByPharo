@@ -28,3 +28,13 @@ Cylinder >> myPrintOn: aStream [
 	base printOn: aStream.
 	aStream nextPut: Character space; nextPut: $|
 ]
+
+{ #category : #printing }
+Cylinder >> storeOn: aStream [
+
+	aStream nextPutAll: '(Cylinder newR: '.
+	base r storeOn: aStream.
+	aStream nextPutAll: ' andH: '.
+	height storeOn: aStream.
+	aStream nextPut: $)
+]

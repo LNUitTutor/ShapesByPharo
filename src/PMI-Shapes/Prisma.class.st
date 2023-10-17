@@ -18,3 +18,17 @@ Prisma >> initialize [
 	height := 1.
 	base := Triangle new
 ]
+
+{ #category : #printing }
+Prisma >> storeOn: aStream [
+
+	aStream nextPutAll: '(Prisma newA: '.
+	base a storeOn: aStream.
+	aStream nextPutAll: ' andB: '.
+	base b storeOn: aStream.
+	aStream nextPutAll: ' withG: '.
+	base gamma storeOn: aStream.
+	aStream nextPutAll: ' andH: '.
+	height storeOn: aStream.
+	aStream nextPut: $)
+]

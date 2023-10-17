@@ -35,3 +35,14 @@ Parallelepiped >> myPrintOn: aStream [
 	super printOn: aStream.
 	aStream nextPutAll: ' |'
 ]
+
+{ #category : #printing }
+Parallelepiped >> storeOn: aStream [
+
+	aStream nextPutAll: '(Parallelepiped newA: '.
+	base a storeOn: aStream.
+	aStream nextPutAll: ' andB: '.
+	base b storeOn: aStream.
+	aStream nextPutAll: ' andC: '.
+	height storeOn: aStream.aStream nextPut: $)
+]
