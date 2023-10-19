@@ -11,7 +11,9 @@ BaselineOfShapesByPharo >> baseline: spec [
 	spec for: #common do: [
 		spec
 			package: 'PMI-Shapes';
-			package: 'PMI-Shapes-Tests' with: [ spec requires: #( 'PMI-Shapes' ) ]
+			package: 'PMI-Shapes-Tests' with: [ spec requires: #( 'PMI-Shapes' ) ];
+			package: 'PMI-ShapesContainer' with: [ spec requires: #( 'PMI-Shapes' ) ];
+			package: 'PMI-ShapesContainer-Tests' with: [ spec requires: #( 'PMI-ShapesContainer' ) ]
 		].
 ]
 

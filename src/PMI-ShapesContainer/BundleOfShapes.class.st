@@ -7,6 +7,47 @@ Class {
 	#category : #'PMI-ShapesContainer'
 }
 
+{ #category : #examples }
+BundleOfShapes class >> examle_1 [
+
+	<script>
+	^ self pickFileAndLoad: '*.ston'
+]
+
+{ #category : #examples }
+BundleOfShapes class >> examle_2 [
+
+	<script>
+	^ self pickFileAndLoad: '*.stc'
+]
+
+{ #category : #examples }
+BundleOfShapes class >> examle_3 [
+
+	<script>
+	| bundle |
+	bundle := self new.
+	5 timesRepeat: [ bundle add: VolumeShape getInstanceByRequest ].
+	Transcript show: bundle printString; cr.
+	^ bundle
+]
+
+{ #category : #examples }
+BundleOfShapes class >> examle_4 [
+
+	<script>
+	self new
+		addAll: {
+				Cone new.
+				Cylinder new.
+				RectPiramid new.
+				TriPiramid new.
+				Prisma new.
+				Parallelepiped new };
+		saveToFile: 'example_4.ston'.
+	UIManager default inform: 'Shapes are saved to the file example_4.ston'
+]
+
 { #category : #loading }
 BundleOfShapes class >> loadFromCodeFile: pathString [
 pathString asFileReference readStreamDo: [ :in | ^ Smalltalk compiler evaluate: in contents ]
