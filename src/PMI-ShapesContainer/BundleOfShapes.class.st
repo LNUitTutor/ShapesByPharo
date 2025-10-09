@@ -161,6 +161,7 @@ BundleOfShapes >> printToFile: pathString [
 
 	pathString asFileReference writeStreamDo: [ :out |
 		out nextPutAll: self printString ]
+	"self printOn: out"
 ]
 
 { #category : #saving }
@@ -181,6 +182,7 @@ BundleOfShapes >> storeToFile: pathString [
 
 	pathString asFileReference writeStreamDo: [ :out |
 		out nextPutAll: self storeString ]
+	"self storeOn: out"
 ]
 
 { #category : #enumerating }
